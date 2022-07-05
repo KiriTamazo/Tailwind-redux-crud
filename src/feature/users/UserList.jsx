@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const UserList = () => {
-  const users = useSelector((store) => store.users);
-
   const renderCard = () =>
     users.map((user) => (
       <div

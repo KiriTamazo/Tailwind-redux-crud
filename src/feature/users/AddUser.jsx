@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "./UserSlice";
 
 const AddUser = () => {
-  const dispatch = useDispatch();
+  
 
   const [values, setValues] = useState({
     name: "",
@@ -16,13 +16,7 @@ const AddUser = () => {
   const navigate = useNavigate();
 
   const handleAddUser = () => {
-    dispatch(
-      addUser({
-        id: "3",
-        name: values.name,
-        email: values.email,
-      })
-    );
+   
     navigate("/");
   };
   return (
