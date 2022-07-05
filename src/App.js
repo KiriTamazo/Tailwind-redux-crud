@@ -15,7 +15,6 @@ function App() {
         <Route path="/" element={<UserList />} />
         <Route path="/add-user" element={<AddUser />} />
         <Route path="/edit-user/:id" element={<EditUser />} />
-        <Route path="/delete-user/:id" element={<DeleteUser />} />
       </Routes>
     </div>
   );

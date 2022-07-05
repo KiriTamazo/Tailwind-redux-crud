@@ -2,9 +2,16 @@ import React from "react";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { deleteUser } from "./UserSlice";
 
 const UserList = () => {
   const users = useSelector((store) => store.users);
+  const dispatch = useDispatch();
+
+  const handleDeleteUser = (id) => {
+    dispatch(deleteUser({ id }));
+  };
 
   const renderCard = () =>
     users.map((user) => (
@@ -35,8 +42,8 @@ const UserList = () => {
               </svg>
             </button>
           </Link>
-          <Link to={`delete-user/${user.id}`}>
-            <button>
+          <Link to="/">
+            <button onClick={() => handleDeleteUser(user.id)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"

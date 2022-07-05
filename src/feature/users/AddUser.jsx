@@ -4,7 +4,7 @@ import TextField from "../../components/TextField";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "./UserSlice";
-
+import { v4 as uuidv4 } from "uuid";
 const AddUser = () => {
   const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const AddUser = () => {
   const handleAddUser = () => {
     dispatch(
       addUser({
-        id: "3",
+        id: uuidv4(),
         name: values.name,
         email: values.email,
       })
